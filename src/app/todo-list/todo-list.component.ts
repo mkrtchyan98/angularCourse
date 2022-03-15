@@ -1,5 +1,12 @@
-import { Component, OnInit,  Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
-import { Todo } from "../todo";
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectorRef,
+} from '@angular/core';
+import { Todo } from '../todo';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,15 +14,11 @@ import { Todo } from "../todo";
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent implements OnInit {
+  constructor() {}
 
-  constructor() {
-
-   }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   @Input()
-  todos: Todo[]  = [];
+  todos: Todo[] = [];
 
   @Output()
   remove: EventEmitter<Todo> = new EventEmitter();
@@ -23,5 +26,4 @@ export class TodoListComponent implements OnInit {
   onRemoveTodo(todo: Todo) {
     this.remove.emit(todo);
   }
-
 }
