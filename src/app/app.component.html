@@ -1,7 +1,14 @@
-<section>
+<!-- <section>
     <app-todo-list [todos]="todos" (remove)="onRemoveTodo($event)"></app-todo-list>
 </section>
 
 <input #newItem placeholder="add an todo" (keyup.enter)="onAddTodo(newItem.value); newItem.value = ''" />
 
-<button class="btn-primary" (click)="onAddTodo(newItem.value)">Add</button>
+<button class="btn-primary" (click)="onAddTodo(newItem.value)">Add</button> -->
+<nav>
+    <a routerLink="/preload-test-first">preload-test-first</a>
+    <a routerLink="/preload-test-delay">preload-test-delay</a>
+    <a routerLink="lazy-test">lazy-test</a>
+</nav>
+
+<router-outlet></router-outlet>
