@@ -14,8 +14,9 @@ import { Todo } from '../todo';
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent {
+  constructor() {}
   @Input()
-  todos: Todo[] = [];
+  todos!: Todo[];
 
   @Output()
   remove: EventEmitter<Todo> = new EventEmitter();
