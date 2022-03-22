@@ -4,30 +4,19 @@ import { Todo } from './todo';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-
-export class AppComponent implements OnInit {
-  todos: Todo[] = [    
-    {id:1, name:'todo_first', created_at: new Date()},
-  {id:2, name:'todo_second', created_at: new Date()}
-];
-
-
-  constructor(
-  ) {
-
-  }
-
-  public ngOnInit() {
-  }
+export class AppComponent {
+  todos: Todo[] = [
+    { id: 1, name: 'todo_first', created_at: new Date() },
+    { id: 2, name: 'todo_second', created_at: new Date() },
+  ];
 
   onAddTodo(name: string) {
-
     this.todos.unshift({
-      id:this.todos.length + 1,
+      id: this.todos.length + 1,
       name: name,
-      created_at: new Date()
+      created_at: new Date(),
     });
   }
 
