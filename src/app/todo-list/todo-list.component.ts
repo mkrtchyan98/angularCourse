@@ -13,10 +13,7 @@ import { Todo } from '../todo';
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css'],
 })
-export class TodoListComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+export class TodoListComponent {
   @Input()
   todos: Todo[] = [];
 
