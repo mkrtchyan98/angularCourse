@@ -13,27 +13,17 @@ import { Todo } from '../todo';
 @Component({
   selector: 'app-todo-item',
   templateUrl: './todo-item.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./todo-item.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodoItemComponent {
-  editable = false;
+  @Input() data!: string[];
 
-  @Input()
-  todo!: Todo;
-
-  @Output()
-  remove: EventEmitter<Todo> = new EventEmitter();
   constructor(private cd: ChangeDetectorRef) {}
 
-  removeTodo(todo: Todo) {
-    this.remove.emit(todo);
-  }
-
-  saveTodo(name: string) {
-    if (!name) return;
-    this.editable = false;
-    this.todo.name = name;
-    this.cd.detectChanges();
+  ngOnInit() {
+    setInterval(() => {
+      this.cd.detectChanges();
+    },2500)
   }
 }

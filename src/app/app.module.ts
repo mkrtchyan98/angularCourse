@@ -12,7 +12,7 @@ import { CapitalizePipe } from './capitalize.pipe';
     AppComponent,
     TodoItemComponent,
     TodoListComponent,
-    CapitalizePipe
+    CapitalizePipe,
   ],
   imports: [
     BrowserModule,

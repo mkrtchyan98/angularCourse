@@ -1,13 +1,3 @@
-<td>{{todo.name | capitalize}}</td>
-<td>{{todo.created_at}}</td>
-<td><button (click)="removeTodo(todo)">Remove</button> </td>
-<td><button (click)="editable = !editable">Edit</button></td>
-
-<div *ngIf="editable">
-    <input class="sm-text-input" placeholder="edit item" [value]="todo.name" #editedItem (keyup.enter)="saveTodo(editedItem.value)">
-
-    <div class="btn-wrapper">
-        <button class="btn" (click)="editable = !editable">Cancel</button>
-        <button class="btn btn-save" (click)="saveTodo(editedItem.value)">Save</button>
-    </div>
-</div>
+<ul>
+    <li *ngFor="let item of data">{{ item }}</li>
+</ul>

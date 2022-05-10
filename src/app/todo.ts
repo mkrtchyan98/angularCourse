@@ -1,5 +1,5 @@
 export class Todo {
-  id!: number;
-  name = '';
+  id!: string;
+  name!: string;
   created_at!: Date;
 }

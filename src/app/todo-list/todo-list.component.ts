@@ -6,6 +6,8 @@ import {
   EventEmitter,
   ChangeDetectorRef,
 } from '@angular/core';
+import { v4 as uuidv4 } from 'uuid';
+
 import { Todo } from '../todo';
 
 @Component({
@@ -14,14 +16,25 @@ import { Todo } from '../todo';
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent {
-  constructor() {}
-  @Input()
-  todos!: Todo[];
+  todos = ['1','2','3'];
+  timeoutId: null | ReturnType<typeof setInterval> = null
+ 
+  ngOnInit() {
+    this.addTodos();
+    this.timeoutId = setInterval(() => {
+      this.addTodos(); 
+    },500);
+  }
+  
+  ngOnDestroy() {
+    if (this.timeoutId) {
+      clearInterval(this.timeoutId);
+    }
+  }
 
-  @Output()
-  remove: EventEmitter<Todo> = new EventEmitter();
-
-  onRemoveTodo(todo: Todo) {
-    this.remove.emit(todo);
+  addTodos() {
+    this.todos.push(
+     uuidv4(),
+    );
   }
 }

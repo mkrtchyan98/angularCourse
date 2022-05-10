@@ -1,5 +1,1 @@
-<input #newItem placeholder="add an todo" (keyup.enter)="onAddTodo(newItem.value)" />
-<button class="btn-primary" (click)="onAddTodo(newItem.value)">Add</button>
-<section>
-    <app-todo-list [todos]="todos" (remove)="onRemoveTodo($event)"></app-todo-list>
-</section>
+<app-todo-list></app-todo-list>
