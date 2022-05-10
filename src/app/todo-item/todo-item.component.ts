@@ -18,12 +18,19 @@ import { Todo } from '../todo';
 })
 export class TodoItemComponent {
   @Input() data!: string[];
+  timeoutId: null | ReturnType<typeof setInterval> = null
 
   constructor(private cd: ChangeDetectorRef) {}
 
   ngOnInit() {
-    setInterval(() => {
+    this.timeoutId = setInterval(() => {
       this.cd.detectChanges();
     },2500)
+  }
+
+  ngOnDestroy() {
+    if (this.timeoutId) {
+      clearInterval(this.timeoutId);
+    }
   }
 }
