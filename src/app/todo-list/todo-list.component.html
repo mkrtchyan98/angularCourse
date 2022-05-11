@@ -1,8 +1,4 @@
-<!-- <table id="customers" *ngIf="todos">
-    <tr *ngFor="let todo of todos">
-        <app-todo-item [todo]="todo"></app-todo-item>
-    </tr>
-    <button (click)="addNewTodo()">Add</button>
-</table> -->
-
-<app-todo-item [data]="todos"></app-todo-item>
+<div class="container">
+    <app-todo-item [data]="todos"></app-todo-item>
+    <app-todo-item-onpush [data]="todos"></app-todo-item-onpush>
+</div>

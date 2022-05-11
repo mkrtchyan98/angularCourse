@@ -1,10 +1,5 @@
 import {
   Component,
-  OnInit,
-  Input,
-  Output,
-  EventEmitter,
-  ChangeDetectorRef,
 } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -17,7 +12,7 @@ import { Todo } from '../todo';
 })
 export class TodoListComponent {
   todos = ['1','2','3'];
-  timeoutId: null | ReturnType<typeof setInterval> = null
+  timeoutId: ReturnType<typeof setInterval> 
  
   ngOnInit() {
     this.addTodos();

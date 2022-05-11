@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { CapitalizePipe } from './capitalize.pipe';
+import { TodoItemOnpushComponent } from './todo-item-onpush/todo-item-onpush.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { CapitalizePipe } from './capitalize.pipe';
     TodoItemComponent,
     TodoListComponent,
     CapitalizePipe,
+    TodoItemOnpushComponent,
   ],
   imports: [
     BrowserModule,
